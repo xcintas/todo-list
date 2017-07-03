@@ -7,13 +7,6 @@ const addTodo = text => {
   }
 }
 
-const filterTodo = text => {
-  return {
-    type: 'FILTER_TODO',
-    text
-  }
-}
-
 const deleteTodo = id => {
   return {
     type: 'DELETE_TODO',
@@ -27,4 +20,11 @@ const deleteTodos = () => {
   }
 }
 
-export {addTodo, filterTodo, deleteTodo, deleteTodos}
+const visibilityFilter = (filter) => {
+  return {
+    type: 'SET_VISIBILITY_FILTER',
+    filter
+  }
+}
+
+export {addTodo, deleteTodo, deleteTodos, visibilityFilter}

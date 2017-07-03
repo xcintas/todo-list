@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import { filterTodo } from '../actions'
+import { visibilityFilter } from '../actions'
 
 let FilterTodo = ({ dispatch }) => {
   let input
@@ -12,7 +12,7 @@ let FilterTodo = ({ dispatch }) => {
       <input onChange={e => {
         e.preventDefault()
 
-        dispatch(filterTodo(e.target.value))
+        dispatch(visibilityFilter(e.target.value))
       }} />
     </div>
   )
