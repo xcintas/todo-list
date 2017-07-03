@@ -11,6 +11,11 @@ const todos = (state = [], action) => {
         }
       ]
     }
+    case 'FILTER_TODO': {
+      return state.filter(todo =>
+        !todo.text.indexOf(action.text)
+      )
+    }
     case 'DELETE_TODO': {
        return state.filter(todo =>
         todo.id !== action.id

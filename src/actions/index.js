@@ -7,6 +7,13 @@ const addTodo = text => {
   }
 }
 
+const filterTodo = text => {
+  return {
+    type: 'FILTER_TODO',
+    text
+  }
+}
+
 const deleteTodo = id => {
   return {
     type: 'DELETE_TODO',
@@ -20,4 +27,4 @@ const deleteTodos = () => {
   }
 }
 
-export {addTodo, deleteTodo, deleteTodos}
+export {addTodo, filterTodo, deleteTodo, deleteTodos}
