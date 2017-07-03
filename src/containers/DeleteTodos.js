@@ -1,24 +1,22 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import { removeTodos } from '../actions'
+import { deleteTodos } from '../actions'
 
-let RemoveTodos = ({ dispatch }) => {
-  let input
-
+let DeleteTodos = ({ dispatch }) => {
   return (
     <div>
       <form onSubmit={e => {
         e.preventDefault()
-        dispatch(removeTodos())
+        dispatch(deleteTodos())
       }}>
         <button type="submit">
-          Remove Todos
+          Delete Todos
         </button>
       </form>
     </div>
   )
 }
-RemoveTodos = connect()(RemoveTodos)
+DeleteTodos = connect()(DeleteTodos)
 
-export default RemoveTodos
+export default DeleteTodos

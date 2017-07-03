@@ -11,7 +11,12 @@ const todos = (state = [], action) => {
         }
       ]
     }
-    case 'REMOVE_TODOS': {
+    case 'DELETE_TODO': {
+       return state.filter(todo =>
+        todo.id !== action.id
+      )
+    }
+    case 'DELETE_TODOS': {
       return []
     }
     default:

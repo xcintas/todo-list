@@ -7,10 +7,17 @@ const addTodo = text => {
   }
 }
 
-const removeTodos = () => {
+const deleteTodo = id => {
   return {
-    type: 'REMOVE_TODOS'
+    type: 'DELETE_TODO',
+    id
   }
 }
 
-export {addTodo, removeTodos}
+const deleteTodos = () => {
+  return {
+    type: 'DELETE_TODOS'
+  }
+}
+
+export {addTodo, deleteTodo, deleteTodos}
