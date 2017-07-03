@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import TodoList from '../components/TodoList'
 
 const getVisibleTodos = (todos, filter) => {
-  return todos.filter(todo => !todo.text.indexOf(filter))
+  return todos.filter(todo => todo.text.includes(filter))
 }
 
 const mapStateToProps = (state) => ({
