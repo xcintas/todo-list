@@ -1,19 +1,13 @@
-import React from 'react';
-import { connect } from 'react-redux'
+import React from 'react'
 
-import { deleteTodo } from '../actions'
+import Todo from './Todo'
 
-let TodoList = ({ dispatch, todos }) => (
+let TodoList = ({ todos }) => (
   <ul>
     {todos.map(todo =>
-      <li key={todo.id}>
-        {todo.text} <a onClick={ e => {
-          dispatch(deleteTodo(todo.id))
-          }}>delete</a>
-      </li>
+      <Todo key={todo.id} todo={todo} />
     )}
   </ul>
 )
-TodoList = connect()(TodoList)
 
 export default TodoList;
