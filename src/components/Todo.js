@@ -1,14 +1,16 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 import { deleteTodo } from '../actions'
 
 let Todo = ({ dispatch, todo }) => (
   <li>
-    {todo.text} <a onClick={ e => {
+    <Link to={`/todo/${todo.id}`}>{todo.text}</Link>&nbsp;
+    <a onClick={ e => {
         dispatch(deleteTodo(todo.id))
-        }}>delete</a>
-    </li>
+    }}>delete</a>
+  </li>
 )
 Todo = connect()(Todo)
 
