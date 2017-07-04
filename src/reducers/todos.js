@@ -1,26 +1,22 @@
+import Immutable from 'immutable'
 
 const todos = (state = [], action) => {
   switch (action.type) {
     case 'ADD_TODO': {
-      return [
-        ...state,
-        {
-          id: action.id,
-          text: action.text,
-          completed: false
-        }
-      ]
+      return Immutable.List(state).push({
+        id: action.id,
+        text: action.text,
+        completed: false
+      })
     }
     case 'DELETE_TODO': {
-       return state.filter(todo =>
-        todo.id !== action.id
-      )
+      return Immutable.List(state).filter(todo => todo.id !== action.id)
     }
     case 'DELETE_TODOS': {
-      return []
+      return [];
     }
     default:
-      return state
+      return Immutable.List(state);
   }
 }
 
