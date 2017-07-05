@@ -9,9 +9,11 @@ import {
 
 function* addTodo(action) {
   try {
+    yield put({type: "FETCH_STARTED"})
     const todo = yield call(mockAddTodo, action.text)
     yield put({type: "ADD_TODO_SUCCEEDED", todo: todo})
     yield* fetchTodos()
+    yield put({type: "FETCH_FINISHED"})
   } catch (e) {
     yield put({type: "ADD_TODO_FAILED"})
   }

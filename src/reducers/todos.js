@@ -6,7 +6,7 @@ const todos = (state = [], action) => {
       return Immutable.List(action.todos)
     }
     default:
-      return Immutable.List(state)
+      return state
   }
 }
 

@@ -6,6 +6,12 @@ export const addTodo = text => {
   }
 }
 
+export const getTodos = () => {
+  return {
+    type: "TODOS_FETCH_REQUESTED"
+  }
+}
+
 export const deleteTodo = id => {
   return {
     type: "DELETE_TODO",

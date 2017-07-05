@@ -1,5 +1,5 @@
 
-const visibilityFilter = (state = [], action) => {
+const visibilityFilter = (state = '', action) => {
   switch (action.type) {
     case 'SET_VISIBILITY_FILTER': {
       return action.filter;
