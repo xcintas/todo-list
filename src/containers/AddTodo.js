@@ -6,21 +6,23 @@ import { addTodo } from '../actions'
 let AddTodo = ({ dispatch }) => {
   let input
 
+  let onSubmit = (e) => {
+    e.preventDefault()
+    if (!input.value.trim()) {
+      return
+    }
+    dispatch(addTodo(input.value))
+    input.value = ''
+  }
+
   return (
     <div>
-      <form onSubmit={e => {
-        e.preventDefault()
-        if (!input.value.trim()) {
-          return
-        }
-        dispatch(addTodo(input.value))
-        input.value = ''
-      }}>
+      <form onSubmit={onSubmit}>
         <input ref={node => {
           input = node
         }} />
         <button type="submit">
-          Add Todo
+          Add
         </button>
       </form>
     </div>

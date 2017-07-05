@@ -8,7 +8,7 @@ let FilterTodo = ({ dispatch }) => {
 
   return (
     <div>
-      Filter text:
+      Filter
       <input onChange={e => {
         e.preventDefault()
 
