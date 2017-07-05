@@ -1,60 +1,27 @@
-let nextTodoId = 0
-const addTodo = text => {
+
+export const addTodo = text => {
   return {
-    type: 'ADD_TODO',
-    id: nextTodoId++,
+    type: "ADD_TODO",
     text
   }
 }
 
-const requestTodos = () => {
+export const deleteTodo = id => {
   return {
-    type: 'REQUEST_TODOS'
-  }
-}
-
-const receiveTodos = (newTodos) => {
-  return {
-    type: 'RECEIVE_TODOS',
-    todos: newTodos
-  }
-}
-
-const fetchTodos = () => {
-  return dispatch => {
-    dispatch(requestTodos())
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve([
-          { id: 0, text: "git pull" },
-          { id: 1, text: "git status" },
-          { id: 2, text: "git add ." },
-          { id: 3, text: "git commit" },
-          { id: 4, text: "git push" }
-        ])
-      }, 1500)
-    })
-  }
-}
-
-const deleteTodo = id => {
-  return {
-    type: 'DELETE_TODO',
+    type: "DELETE_TODO",
     id
   }
 }
 
-const deleteTodos = () => {
+export const deleteTodos = () => {
   return {
-    type: 'DELETE_TODOS'
+    type: "DELETE_TODOS"
   }
 }
 
-const visibilityFilter = (filter) => {
+export const visibilityFilter = (filter) => {
   return {
-    type: 'SET_VISIBILITY_FILTER',
+    type: "SET_VISIBILITY_FILTER",
     filter
   }
 }
-
-export {addTodo, requestTodos, deleteTodo, deleteTodos, visibilityFilter}
