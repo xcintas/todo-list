@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import Todo from './Todo'
-import { getTodos } from '../actions'
+import { getTodos } from 'Actions'
 
 class TodoList extends Component {
   componentDidMount() {

@@ -3,9 +3,9 @@ import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import { BrowserRouter, Route } from 'react-router-dom'
 
-import { store } from './store'
-import Home from './components/Home'
-import TodoDetails from './components/TodoDetails'
+import { store } from 'Store'
+import Home from 'Components/Home'
+import TodoDetails from 'Components/TodoDetails'
 
 render(
   <Provider store={store}>

@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import { deleteTodos } from '../actions'
+import { deleteTodos } from 'Actions'
 
 let DeleteTodos = ({ dispatch }) => {
   return (

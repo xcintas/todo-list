@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 
-import { deleteTodo } from '../actions'
+import { deleteTodo } from 'Actions'
 
 let Todo = ({ dispatch, todo }) => (
   <li>

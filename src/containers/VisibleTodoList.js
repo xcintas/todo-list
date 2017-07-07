@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 
-import TodoList from '../components/TodoList'
+import TodoList from 'Components/TodoList'
 
 const getVisibleTodos = (todos, filter) => {
   return todos.filter(todo => todo.text.includes(filter))

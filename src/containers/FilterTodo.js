@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import { visibilityFilter } from '../actions'
+import { visibilityFilter } from 'Actions'
 
 let FilterTodo = ({ dispatch }) => {
   let input

@@ -1,9 +1,9 @@
 import React from 'react'
 
-import AddTodo from '../containers/AddTodo'
-import FilterTodo from '../containers/FilterTodo'
-import DeleteTodos from '../containers/DeleteTodos'
-import VisibleTodoList from '../containers/VisibleTodoList'
+import AddTodo from 'Containers/AddTodo'
+import FilterTodo from 'Containers/FilterTodo'
+import DeleteTodos from 'Containers/DeleteTodos'
+import VisibleTodoList from 'Containers/VisibleTodoList'
 
 let Home = () => (
   <div>
