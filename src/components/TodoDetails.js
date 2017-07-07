@@ -1,5 +1,3 @@
-import React from 'react'
-
 let TodoDetails = () => (
   <div>
     <h1>Todo details</h1>

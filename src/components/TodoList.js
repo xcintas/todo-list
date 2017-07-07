@@ -1,9 +1,7 @@
-import React, { Component } from 'react'
-
 import Todo from './Todo'
 import { getTodos } from 'Actions'
 
-class TodoList extends Component {
+class TodoList extends React.Component {
   componentDidMount() {
     const { dispatch } = this.props
     dispatch(getTodos())

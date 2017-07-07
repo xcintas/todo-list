@@ -1,5 +1,3 @@
-import React from 'react'
-
 import AddTodo from 'Containers/AddTodo'
 import FilterTodo from 'Containers/FilterTodo'
 import DeleteTodos from 'Containers/DeleteTodos'
