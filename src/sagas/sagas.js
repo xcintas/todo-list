@@ -48,11 +48,11 @@ function* deleteTodos() {
   }
 }
 
-function* mySaga() {
+function* appSaga() {
   yield takeEvery("ADD_TODO", addTodo)
   yield takeEvery("DELETE_TODO", deleteTodo)
   yield takeEvery("DELETE_TODOS", deleteTodos)
   yield takeEvery("TODOS_FETCH_REQUESTED", fetchTodos)
 }
 
-export default mySaga
+export default appSaga

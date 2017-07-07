@@ -25,7 +25,7 @@ export const deleteTodos = () => {
   }
 }
 
-export const visibilityFilter = (filter) => {
+export const visibilityFilter = filter => {
   return {
     type: "SET_VISIBILITY_FILTER",
     filter
