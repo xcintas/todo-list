@@ -1,11 +1,10 @@
 import { connect } from 'react-redux'
 
+import Add from 'Components/Add'
 import { addTodo } from 'Actions'
 
 let AddTodo = ({ dispatch }) => {
-  let input
-
-  let onSubmit = (e) => {
+  let onSubmit = (e, input) => {
     e.preventDefault()
     if (!input.value.trim()) {
       return
@@ -16,16 +15,7 @@ let AddTodo = ({ dispatch }) => {
   }
 
   return (
-    <div>
-      <form onSubmit={onSubmit}>
-        <input ref={node => {
-          input = node
-        }} />
-        <button type="submit">
-          Add
-        </button>
-      </form>
-    </div>
+    <Add onSubmit={onSubmit} />
   )
 }
 AddTodo = connect()(AddTodo)

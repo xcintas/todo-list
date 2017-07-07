@@ -1,19 +1,16 @@
 import { connect } from 'react-redux'
 
+import Delete from 'Components/Delete'
 import { deleteTodos } from 'Actions'
 
 let DeleteTodos = ({ dispatch }) => {
+  let onSubmit = ((e) => {
+    e.preventDefault()
+    dispatch(deleteTodos())
+  })
+
   return (
-    <div>
-      <form onSubmit={e => {
-        e.preventDefault()
-        dispatch(deleteTodos())
-      }}>
-        <button type="submit">
-          Delete Todos
-        </button>
-      </form>
-    </div>
+    <Delete onSubmit={onSubmit} />
   )
 }
 DeleteTodos = connect()(DeleteTodos)

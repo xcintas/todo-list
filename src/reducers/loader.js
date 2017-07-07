@@ -1,3 +1,4 @@
+import Immutable from 'immutable'
 
 const loader = (state = false, action) => {
   switch (action.type) {
@@ -12,4 +13,4 @@ const loader = (state = false, action) => {
   }
 }
 
-export default loader;
+export default loader
