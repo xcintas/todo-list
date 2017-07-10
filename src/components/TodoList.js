@@ -1,21 +1,11 @@
 import Todo from './Todo'
-import { getTodos } from 'Actions'
 
-class TodoList extends React.Component {
-  componentDidMount() {
-    const { dispatch } = this.props
-    dispatch(getTodos())
-  }
+let TodoList = ({ todos, isLoading, onTodoDelete }) => (
+  <ul style={isLoading ? { opacity: 0.2 }: { opacity: 1 }}>
+    {todos.map(todo =>
+      <Todo key={todo.id} todo={todo} onClick={() => onTodoDelete(todo.id)}/>
+    )}
+  </ul>
+)
 
-  render() {
-    return <div>
-            <ul style={this.props.isLoading ? { opacity: 0.2 }: { opacity: 1 }}>
-              {this.props.todos.map(todo =>
-                <Todo key={todo.id} todo={todo} />
-              )}
-            </ul>
-          </div>
-  }
-}
-
-export default TodoList;
+export default TodoList

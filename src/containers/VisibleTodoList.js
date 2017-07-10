@@ -1,5 +1,6 @@
 import { connect } from 'react-redux'
 
+import { getTodos, deleteTodo } from 'Actions'
 import TodoList from 'Components/TodoList'
 
 const getVisibleTodos = (todos, filter) => {
@@ -11,8 +12,25 @@ const mapStateToProps = (state) => ({
   isLoading: state.loader
 })
 
-const VisibleTodoList = connect(
-  mapStateToProps
-)(TodoList)
+const mapDispatchToProps = dispatch => {
+  return {
+    getTodos: () => {
+      dispatch(getTodos())
+    },
+    onTodoDelete: todoId => {
+      dispatch(deleteTodo(todoId))
+    }
+  }
+}
 
-export default VisibleTodoList
+class VisibleTodoList extends React.Component {
+  componentDidMount() {
+    this.props.getTodos()
+  }
+
+  render() {
+    return <TodoList todos={this.props.todos} isLoading={this.props.isLoading} onTodoDelete={this.props.onTodoDelete}/>
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(VisibleTodoList)
