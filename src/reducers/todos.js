@@ -1,13 +1,8 @@
 import Immutable from 'immutable'
+import { handleActions } from 'redux-actions'
 
-const todos = (state = [], action) => {
-  switch (action.type) {
-    case "TODOS_FETCH_SUCCEEDED": {
-      return Immutable.List(action.todos)
-    }
-    default:
-      return state
-  }
-}
+const todos = handleActions({
+  "TODOS_FETCH_SUCCEEDED": (state, action) => Immutable.List(action.todos)
+}, [])
 
 export default todos

@@ -4,10 +4,8 @@ import todos from './todos'
 import loader from './loader'
 import visibilityFilter from './visibilityFilter'
 
-const todoApp = combineReducers({
+export default combineReducers({
   todos,
   loader,
   visibilityFilter
 })
-
-export default todoApp;

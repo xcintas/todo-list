@@ -10,7 +10,7 @@ import {
 function* addTodo(action) {
   try {
     yield put({type: "FETCH_STARTED"})
-    const todo = yield call(mockAddTodo, action.text)
+    const todo = yield call(mockAddTodo, action.payload.text)
     yield put({type: "ADD_TODO_SUCCEEDED", todo: todo})
     yield* fetchTodos()
     yield put({type: "FETCH_FINISHED"})
@@ -28,11 +28,13 @@ function* fetchTodos() {
   }
 }
 
-function* deleteTodo() {
+function* deleteTodo(action) {
   try {
-    yield call(mockDeleteTodo)
+    yield put({type: "FETCH_STARTED"})
+    yield call(mockDeleteTodo, action.payload.id)
     yield put({type: "TODO_DELETE_SUCCEEDED"})
     yield* fetchTodos()
+    yield put({type: "FETCH_FINISHED"})
   } catch (e) {
     yield put({type: "TODO_DELETE_FAILED"})
   }
@@ -40,9 +42,11 @@ function* deleteTodo() {
 
 function* deleteTodos() {
   try {
+    yield put({type: "FETCH_STARTED"})
     yield call(mockDeleteTodos)
     yield put({type: "TODOS_DELETE_SUCCEEDED"})
     yield* fetchTodos()
+    yield put({type: "FETCH_FINISHED"})
   } catch (e) {
     yield put({type: "TODOS_DELETE_FAILED"})
   }

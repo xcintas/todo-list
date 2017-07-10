@@ -3,8 +3,6 @@ import { connect } from 'react-redux'
 import { visibilityFilter } from 'Actions'
 
 let FilterTodo = ({ dispatch }) => {
-  let input
-
   return (
     <div>
       Filter

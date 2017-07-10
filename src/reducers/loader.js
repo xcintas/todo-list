@@ -1,16 +1,9 @@
 import Immutable from 'immutable'
+import { handleActions } from 'redux-actions'
 
-const loader = (state = false, action) => {
-  switch (action.type) {
-    case "FETCH_STARTED": {
-      return true
-    }
-    case "FETCH_FINISHED": {
-      return false
-    }
-    default:
-      return state
-  }
-}
+const loader = handleActions({
+  "FETCH_STARTED": (state, action) => true,
+  "FETCH_FINISHED": (state, action) => false
+}, false)
 
 export default loader
