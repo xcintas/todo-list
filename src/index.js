@@ -11,7 +11,7 @@ render(
     <BrowserRouter>
       <div>
         <Route exact path="/" component={Home}/>
-        <Route name="TodoDetails" path="/todo/:id" component={TodoDetails} />
+        <Route path="/todo/:id" component={TodoDetails} />
       </div>
     </BrowserRouter>
   </Provider>,
