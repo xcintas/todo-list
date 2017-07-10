@@ -18,7 +18,7 @@ const mapDispatchToProps = dispatch => {
 
 class TodoDetails extends React.Component {
   componentDidMount() {
-    this.props.getTodo(this.props.match.params.id)
+    this.props.getTodo(parseInt(this.props.match.params.id))
   }
 
   render() {
