@@ -22,9 +22,8 @@ let getTodo = (id) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       let rez = todos.find((todo) => {
-        return todo.id === id
+        return todo.id == id
       })
-
       resolve(rez)
       
     }, defaultTimeout)
