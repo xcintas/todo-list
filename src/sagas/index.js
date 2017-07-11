@@ -17,7 +17,7 @@ function* addTodoSaga(action) {
     yield put({type: "FETCH_STARTED"})
     const todo = yield call(addTodo, action.payload.text)
     yield put({type: "ADD_TODO_SUCCEEDED", todo: todo})
-    yield* fetchTodosSaga()
+    yield call(fetchTodosSaga)
     yield put({type: "FETCH_FINISHED"})
   } catch (e) {
     yield put({type: "ADD_TODO_FAILED"})
@@ -40,11 +40,10 @@ function* deleteTodoSaga(action) {
     yield put({type: "FETCH_STARTED"})
     yield call(deleteTodo, action.payload.id)
     yield put({type: "TODO_DELETE_SUCCEEDED"})
-    yield* fetchTodosSaga()
+    yield call(fetchTodosSaga)
     yield put({type: "FETCH_FINISHED"})
 
     if (action.payload.shouldRedirect) {
-      //console.log('redirecting...')
       yield put(push('/'))
     }
   } catch (e) {
@@ -57,7 +56,7 @@ function* deleteTodosSaga() {
     yield put({type: "FETCH_STARTED"})
     yield call(deleteTodos)
     yield put({type: "TODOS_DELETE_SUCCEEDED"})
-    yield* fetchTodosSaga()
+    yield call(fetchTodosSaga)
     yield put({type: "FETCH_FINISHED"})
   } catch (e) {
     yield put({type: "TODOS_DELETE_FAILED"})

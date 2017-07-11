@@ -1,4 +1,4 @@
-let Delete = ({ onSubmit }) => {
+const Delete = ({ onSubmit }) => {
   return (
     <div>
       <form onSubmit={onSubmit}>

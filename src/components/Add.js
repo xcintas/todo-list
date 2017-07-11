@@ -1,4 +1,4 @@
-let Add = ({ onSubmit }) => {
+const Add = ({ onSubmit }) => {
   let input
 
   return (

@@ -3,16 +3,17 @@ import { connect } from 'react-redux'
 import Delete from 'Components/Delete'
 import { deleteTodos } from 'Actions'
 
-let DeleteTodos = ({ dispatch }) => {
-  let onSubmit = ((e) => {
-    e.preventDefault()
-    dispatch(deleteTodos())
-  })
+const DeleteTodos = ( props ) => (
+    <Delete onSubmit={props.onSubmit} />
+)
 
-  return (
-    <Delete onSubmit={onSubmit} />
-  )
+const mapDispatchToProps = dispatch => {
+  return {
+    onSubmit: e => {
+      e.preventDefault()
+      dispatch(deleteTodos())
+    }
+  }
 }
-DeleteTodos = connect()(DeleteTodos)
 
-export default DeleteTodos
+export default connect(state => ({}), mapDispatchToProps)(DeleteTodos)
