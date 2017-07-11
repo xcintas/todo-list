@@ -1,19 +1,20 @@
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
-import { BrowserRouter, Route } from 'react-router-dom'
+import { Route } from 'react-router'
+import { ConnectedRouter } from 'react-router-redux'
 
-import { store } from 'Store'
+import { store, history } from 'Store'
 import Home from 'Containers/Home'
 import TodoDetails from 'Containers/TodoDetails'
 
 render(
   <Provider store={store}>
-    <BrowserRouter>
+    <ConnectedRouter history={history}>
       <div>
         <Route exact path="/" component={Home}/>
         <Route path="/todo/:id" component={TodoDetails} />
       </div>
-    </BrowserRouter>
+    </ConnectedRouter>
   </Provider>,
   document.getElementById('root')
 )

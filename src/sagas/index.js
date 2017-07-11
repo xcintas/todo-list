@@ -1,6 +1,7 @@
 
 import { call, put, takeEvery } from 'redux-saga/effects'
 import { addTodo, deleteTodo, deleteTodos, getTodo, getTodos } from '../mocks/Todo'
+import { push } from 'react-router-redux'
 
 function* fetchTodosSaga() {
   try {
@@ -43,7 +44,8 @@ function* deleteTodoSaga(action) {
     yield put({type: "FETCH_FINISHED"})
 
     if (action.payload.shouldRedirect) {
-      console.log('redirecting...')
+      //console.log('redirecting...')
+      yield put(push('/'))
     }
   } catch (e) {
     yield put({type: "TODO_DELETE_FAILED"})

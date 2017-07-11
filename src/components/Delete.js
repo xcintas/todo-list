@@ -1,7 +1,7 @@
 let Delete = ({ onSubmit }) => {
   return (
     <div>
-      <form onSubmit={e => onSubmit(e)}>
+      <form onSubmit={onSubmit}>
         <button type="submit"> Delete </button>
       </form>
     </div>
